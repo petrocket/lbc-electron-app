@@ -3,46 +3,50 @@
   "version": "0.0.1",
   "license": "MIT",
   "description": "An electron app",
-  "author":"Alex Peterson",
+  "author": "Alex Peterson",
   "build": {
-    "appId":"com.unknown.lbc.electronapp",
+    "appId": "com.unknown.lbc.electronapp",
     "productName": "ElectronApp",
+    "publish": {
+      "provider":"github",
+      "releaseType":"release"
+    },
     "mac": {
-      "target":"dmg",
-      "category":"app.category.type",
-      "icon":"resources/mac/icons/app.icns"
+      "target": "dmg",
+      "category": "app.category.type",
+      "icon": "resources/mac/icons/app.icns"
     },
     "dmg": {
       "contents": [
-            {
-                "x": 135,
-                "y": 140
-            },
-            {
-                "x": 405,
-                "y": 140,
-                "type": "link",
-                "path": "/Applications"
-            }
-        ],
+        {
+          "x": 135,
+          "y": 140
+        },
+        {
+          "x": 405,
+          "y": 140,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ],
       "background": "resources/mac/images/dmg_background.png"
     },
     "linux": {
-      "target":"tar.xz"
+      "target": "AppImage"
     },
-    "win":  {
-      "target":"nsis",
-      "icon":"resources/win/icons/app.ico"
+    "win": {
+      "target": "nsis",
+      "icon": "resources/win/icons/app.ico"
     },
-    "nsis":{
-      "oneClick":false,
-      "allowToChangeInstallationDirectory":true,
-      "menuCategory":"Amazon",
-      "installerSidebar":"resources/win/images/installer_sidebar.bmp"
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "menuCategory": "Amazon",
+      "installerSidebar": "resources/win/images/installer_sidebar.bmp"
     }
   },
   "scripts": {
-    "build":"yarn compile",
+    "build": "yarn compile",
     "dev": "electron-webpack dev",
     "compile": "electron-webpack",
     "dist": "yarn compile && electron-builder",
@@ -51,6 +55,8 @@
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
+    "electron-log": "^4.3.1",
+    "electron-updater": "^4.3.5",
     "source-map-support": "^0.5.16"
   },
   "devDependencies": {
