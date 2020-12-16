@@ -16,7 +16,7 @@ log.info('App starting...')
 let mainWindow
 
 function sendStatusToWindow(text) {
-  log.info(text);
+  log.info('Status: ' + text);
   //win.webContents.send('message', text);
 }
 
