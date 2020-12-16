@@ -8,8 +8,12 @@
     "appId":"com.unknown.lbc.electronapp",
     "productName": "ElectronApp",
     "mac": {
+      "target":"dmg",
       "category":"app.category.type",
       "icon":"resources/mac/icons/app.icns"
+    },
+    "linux": {
+      "target":"tar.xz"
     },
     "win":  {
       "target":"nsis",
