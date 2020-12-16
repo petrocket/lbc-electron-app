@@ -20,7 +20,8 @@
       "allowToChangeInstallationDirectory":true,
       "menuCategory":"Amazon",
       "installerSidebar":"resources/win/images/installer_sidebar.bmp"
-    }
+    },
+    "releaseNotes":"Updated version 0.0.1"
   },
   "scripts": {
     "dev": "electron-webpack dev",
