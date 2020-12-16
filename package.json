@@ -12,6 +12,21 @@
       "category":"app.category.type",
       "icon":"resources/mac/icons/app.icns"
     },
+    "dmg": {
+      "contents": [
+            {
+                "x": 135,
+                "y": 140
+            },
+            {
+                "x": 405,
+                "y": 140,
+                "type": "link",
+                "path": "/Applications"
+            }
+        ],
+      "background": "resources/mac/images/dmg_background.png"
+    },
     "linux": {
       "target":"tar.xz"
     },
@@ -27,6 +42,7 @@
     }
   },
   "scripts": {
+    "build":"yarn compile",
     "dev": "electron-webpack dev",
     "compile": "electron-webpack",
     "dist": "yarn compile && electron-builder",
