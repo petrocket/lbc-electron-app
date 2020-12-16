@@ -15,6 +15,11 @@ log.info('App starting...')
 // global reference to mainWindow (necessary to prevent window from being garbage collected)
 let mainWindow
 
+function sendStatusToWindow(text) {
+  log.info(text);
+  //win.webContents.send('message', text);
+}
+
 function createMainWindow() {
   const window = new BrowserWindow({webPreferences: {nodeIntegration: true}})
 
