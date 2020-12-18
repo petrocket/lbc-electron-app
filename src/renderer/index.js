@@ -30,7 +30,7 @@ function init(){
         },
         template:`<div>
             <div class=empty>
-            <p class="empty-title h5">Welcome!</p>
+            <p class="empty-title h5">Welcome this is edited!</p>
             <p class=empty-subtitle>This is a demo.</p>
             <div class=empty-action>
                 <button @click="open('https://aws.amazon.com/lumberyard/downloads/')"class="btn btn-primary">Get Lumberyard</button>
