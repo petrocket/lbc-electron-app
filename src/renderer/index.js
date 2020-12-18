@@ -22,15 +22,20 @@ function init(){
         methods:{
             open(b){
                 require('electron').shell.openExternal(b)
+            },
+            openLogsPath(){
+                var logPath = require('electron-log').transports.file.getFile().path
+                require('electron').shell.showItemInFolder(logPath)
             }
         },
         template:`<div>
             <div class=empty>
             <p class="empty-title h5">Welcome!</p>
-            <p class=empty-subtitle>Lorem ipsum.</p>
+            <p class=empty-subtitle>This is a demo.</p>
             <div class=empty-action>
-                <button @click="open('https://electron.atom.io/docs/')"class="btn btn-primary">Lumberyard</button>
-                <button @click="open('https://webpack.electron.build')"class="btn btn-primary">Documentation</button> <br />
+                <button @click="open('https://aws.amazon.com/lumberyard/downloads/')"class="btn btn-primary">Get Lumberyard</button>
+                <button @click="open('https://docs.aws.amazon.com/lumberyard/index.html')"class="btn btn-primary">Docs</button> 
+                <button @click="openLogsPath()"class="btn btn-primary">Logs</button> <br />
                 <ul class=breadcrumb>
                     <li class=breadcrumb-item>electron-webpack v{{ versions.electronWebpack }}</li>
                     <li class=breadcrumb-item>electron v{{ versions.electron }}</li>
