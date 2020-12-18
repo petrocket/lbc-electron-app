@@ -16,7 +16,10 @@ function init(){
         data:{
             versions:{
                 electron:process.versions.electron,
-                electronWebpack:require('electron-webpack/package.json').version
+                electronWebpack:require('electron-webpack/package.json').version,
+                appVersion:process.env.npm_package_version
+                // alternately, in a prod environment we can use this 
+                //appVersion:require('electron').remote.app.getVersion()
             }
         },
         methods:{
@@ -30,8 +33,8 @@ function init(){
         },
         template:`<div>
             <div class=empty>
-            <p class="empty-title h5">Welcome this is edited!</p>
-            <p class=empty-subtitle>This is a demo.</p>
+            <p class="empty-title h5">Welcome!</p>
+            <p class=empty-subtitle>You're running version v{{ versions.appVersion }}</p>
             <div class=empty-action>
                 <button @click="open('https://aws.amazon.com/lumberyard/downloads/')"class="btn btn-primary">Get Lumberyard</button>
                 <button @click="open('https://docs.aws.amazon.com/lumberyard/index.html')"class="btn btn-primary">Docs</button> 
